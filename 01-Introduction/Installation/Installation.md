@@ -151,10 +151,12 @@ docker images
 ```
 Output
 
+```bash
 REPOSITORY                         TAG       IMAGE ID       CREATED          SIZE
 vinay9295/my-first-docker-image   latest    960d37536dcd   26 seconds ago   467MB
 ubuntu                             latest    58db3edaf2be   13 days ago      77.8MB
 hello-world                        latest    feb5d9fea6a5   16 months ago    13.3kB
+```
 
 #### Run your First Docker Container
 
@@ -165,6 +167,27 @@ docker run -it vinay9295/my-first-docker-image
 Output
 
 Hello World
+
+---
+### Push the Image to DockerHub and share it with the world
+
+```bash
+docker push abhishekf5/my-first-docker-image
+```
+
+Output
+```bash
+
+Using default tag: latest
+The push refers to repository [docker.io/vinay9295/my-first-docker-image]
+35f7f16e667c: Pushed
+62f1c4990a09: Pushed
+d908a1cfe9b6: Pushed
+107cbdaeec04: Mounted from library/ubuntu
+latest: digest: sha256:20f4fa6060aeb0e873c82f4dbf45962c893042f7412c9b4e0797a41a46a88f52 size: 1155
+
+```
+
 
 
 
