@@ -172,7 +172,7 @@ Hello World
 ### Push the Image to DockerHub and share it with the world
 
 ```bash
-docker push abhishekf5/my-first-docker-image
+docker push vinay9295/my-first-docker-image
 ```
 
 Output
