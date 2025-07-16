@@ -56,7 +56,7 @@ sudo usermod -aG docker ubuntu
 ```
 In the above command ubuntu is the name of the user, you can change the username appropriately.
 
-NOTE: : Need to logout and login back for the changes to be reflected.
+**NOTE** : Need to logout and login back for the changes to be reflected.
 
 ### Docker is Installed, up and running 
 
