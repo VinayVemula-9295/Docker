@@ -58,7 +58,7 @@ In the above command ubuntu is the name of the user, you can change the username
 
 NOTE: : Need to logout and login back for the changes to be reflected.
 
-Docker is Installed, up and running 
+### Docker is Installed, up and running 
 
 Use the same command again, to verify that docker is up and running.
 
@@ -76,6 +76,8 @@ This message shows that your installation appears to be working correctly.
 ...
 ...
 ```
+
+
 
 
 
