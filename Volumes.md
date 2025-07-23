@@ -98,5 +98,67 @@ This command mounts `/home/user/logs` on the host to `/var/log/app` in the conta
 ```bash
 docker run --mount type=volume,source=mydata,target=/data ubuntu
 ```
+---
+#### Generic format of the Docker run command using --mount:
+
+```bash
+docker run -d \
+  --name <container_name> \
+  --mount source=<volume_name>,target=<container_path> \
+  <image_name>:<tag>
+```
+
+* <container_name> – Name you want to assign to the running container.
+
+* <volume_name> – Name of the Docker volume you want to mount.
+
+* <container_path> – Path inside the container where the volume will be mounted.
+
+* <image_name> – Docker image to use (e.g., nginx, python, etc.).
+
+* <tag> – Version of the image (e.g., latest, 3.10, etc.).
+
+> Note: No spaces around the equals sign (=) in --mount source=...,target=...
+
+### Example 
+```bash
+docker volume create my-app-volume
+```
+
+```bash
+docker run -d \
+  --name my-nginx-container \
+  --mount source=my-app-volume,target=/usr/share/nginx/html \
+  nginx:latest
+```
+
+
+#### -v for mounting a volume in docker run:
+
+```bash
+docker run -d \
+  --name <container_name> \
+  -v <volume_name>:<container_path> \
+  <image_name>:<tag>
+```
+* <volume_name> – Docker volume name to use or create.
+
+* <container_path> – Directory inside the container to mount the volume.
+
+* <container_name> – Desired name for your container.
+
+* <image_name>:<tag> – Docker image and optional tag/version.
+
+#### Example
+```bash
+docker run -d \
+  --name my-nginx-container \
+  -v my-app-volume:/usr/share/nginx/html \
+  nginx:latest
+```
+This mounts my-app-volume to the NGINX content directory. Use this method for simpler, quicker setups.
+
+> **Note** :  Prefer `--mount` over `-v` for more clarity in production-grade scripts:
+
 
 
