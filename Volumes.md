@@ -49,6 +49,7 @@ Inside the container, any data written to `/app/data` will be stored in the `myd
 ```bash
 docker volume inspect mydata
 ```
+This command gives you detailed JSON output about a specific Docker volume, such as where it's stored, how it's used, and driver details.
 
 ###  Removing a Volume
 
