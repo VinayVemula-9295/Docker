@@ -164,3 +164,23 @@ networks:
 ```
 
 
+## Commands to Run This
+####  Start all services
+```bash
+docker compose up --build
+```
+#### Stop and remove all
+```bash
+docker compose down
+```
+#### View logs
+```bash
+docker compose logs -f
+```
+#### Access backend container
+```bashr
+docker compose exec backend sh
+```
+
+
+
