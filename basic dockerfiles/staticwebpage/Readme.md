@@ -21,7 +21,7 @@ When you pull nginx or nginx:alpine, it has:
 | Port `80`                        | Default HTTP port NGINX listens to           |
 
 
-Build and Run the Docker Image
+**Build and Run the Docker Image**
 
 ```bash
 docker build -t my-static-website .
