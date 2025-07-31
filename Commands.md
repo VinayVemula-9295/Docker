@@ -194,3 +194,65 @@ docker network connect my_bridge_net existing_container
 ```bash
 docker network inspect my_bridge_net
 ```
+
+---
+
+## docker Commit 
+`docker commit` creates a new image based on the current (stopped or running) container filesystem state.
+
+### Scenario:
+
+* You have a **running container** named `abc` with an app inside.
+* You **stop** the container (with `docker stop abc`).
+* You want to **save the current state** of that stopped container as a new image.
+
+---
+
+### What happens with `docker commit abc <new-image-name>`?
+
+* `docker commit` **creates a new image** based on the current (stopped or running) container filesystem **state**.
+* It does **NOT create a new container** directly.
+* You get a **new image** that contains the app and changes made inside `abc`.
+
+---
+
+### Example:
+
+```bash
+docker commit abc abc-image:latest
+```
+
+* This creates a new image named `abc-image:latest` from the stopped container `abc`.
+
+---
+
+### To use it:
+
+1. **Run a new container from this image:**
+
+```bash
+docker run -it --name abc-new abc-image:latest
+```
+
+* This creates and runs a **new container** (`abc-new`) with all the changes you saved from `abc`.
+
+---
+
+### Important notes:
+
+| Action                 | Result                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ |
+| `docker stop abc`      | Stops container `abc`, container still exists but is not running. Files remain as-is inside container. |
+| `docker commit abc`    | Creates a **new image** from container `abc`'s current state (running or stopped).                     |
+| `docker run abc-image` | Creates a **new container** from the committed image.                                                  |
+
+---
+
+### Summary:
+
+* `docker commit` **does NOT create a container**.
+* It creates an **image snapshot** from an existing container.
+* You then run a container **from that image** to resume your app.
+
+---
+
