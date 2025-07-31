@@ -1,5 +1,7 @@
 # A simple MERN stack application
 
+<img width="692" height="286" alt="image" src="https://github.com/user-attachments/assets/4f6b3107-5e77-4ef9-b416-2a7a6d53faf2" />
+
 **Note** - To run this project using `docker compose`, follow the below steps.
 1. Implementation of `Dockerfile` for `client` and `server`.
 2. Run the containers using `Docker Compose`.
